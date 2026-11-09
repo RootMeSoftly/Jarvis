@@ -56,7 +56,7 @@ class Llm {
     final res = await http
         .post(
           Uri.parse(
-              'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent'),
+              'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent'),
           headers: {
             'x-goog-api-key': key,
             'Content-Type': 'application/json; charset=utf-8',
