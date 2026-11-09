@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="75%">
+      <stop offset="0" stop-color="#0a2540"/>
+      <stop offset="1" stop-color="#030B14"/>
+    </radialGradient>
+    <radialGradient id="core" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.45" stop-color="#00E5FF"/>
+      <stop offset="1" stop-color="#2979FF" stop-opacity="0.2"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#00E5FF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#00E5FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="320" fill="url(#bg)"/>
+
+  <rect x="0" y="0" width="800" height="2" fill="#00E5FF" opacity="0.25">
+    <animate attributeName="y" values="0;320;0" dur="7s" repeatCount="indefinite"/>
+  </rect>
+
+  <g transform="translate(400,115)">
+    <circle r="105" fill="url(#glow)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="30" fill="url(#core)">
+      <animate attributeName="r" values="27;34;27" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="52" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="50 40 30 207">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="68" fill="none" stroke="#2979FF" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="120 80 60 167">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="84" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-dasharray="80 100 40 308" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="13s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <text x="400" y="248" text-anchor="middle" font-family="Courier New, monospace" font-size="46" font-weight="bold" letter-spacing="14" fill="#00E5FF">
+    J.A.R.V.I.S
+    <animate attributeName="opacity" values="0.75;1;0.75" dur="3s" repeatCount="indefinite"/>
+  </text>
+  <text x="400" y="284" text-anchor="middle" font-family="Courier New, monospace" font-size="15" letter-spacing="4" fill="#7fdcff">
+    PERSONAL AI VOICE ASSISTANT  •  BANGLA + ENGLISH
+  </text>
+</svg>
