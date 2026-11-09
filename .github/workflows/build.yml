@@ -1,0 +1,28 @@
+name: Build JARVIS APK
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Generate Android scaffold
+        run: flutter create --platforms=android --project-name jarvis --org com.jarvis.app .
+      - name: Patch manifest and gradle
+        run: bash tools/patch_android.sh
+      - run: flutter pub get
+      - run: flutter build apk --release --split-per-abi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jarvis-apk
+          path: build/app/outputs/flutter-apk/*.apk
